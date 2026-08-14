@@ -66,8 +66,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Office Address</h4>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                      Shree Shyam Corporate Hub, Main Commercial District,<br /> India
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.5' }}>
+                      6th Floor, Mercádo, Chimanlal Girdharlal Rd, opp. Municipal Market, Vasant Vihar, Ellisbridge, Ahmedabad, Gujarat 380009
                     </p>
                   </div>
                 </div>
@@ -79,8 +79,7 @@ export const Contact: React.FC = () => {
                   <div>
                     <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Phone & Direct Desk</h4>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                      Primary: <a href="tel:+919825030862" style={{ color: 'var(--accent-skyblue)' }}>+91 98250 30862</a> <br />
-                      GeM Desk: <a href="tel:+919825030862" style={{ color: 'var(--accent-skyblue)' }}>+91 98250 30862</a>
+                      Official Helpline: <a href="tel:+917600393779" style={{ color: 'var(--accent-skyblue)', fontWeight: 600 }}>+91 7600 393 779</a>
                     </p>
                   </div>
                 </div>
@@ -92,8 +91,7 @@ export const Contact: React.FC = () => {
                   <div>
                     <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Email Inquiries</h4>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                      General: <a href="mailto:info@shreeshyamgroup.com" style={{ color: 'var(--accent-skyblue)' }}>info@shreeshyamgroup.com</a> <br />
-                      GeM Portal: <a href="mailto:gem@shreeshyamgroup.com" style={{ color: 'var(--accent-skyblue)' }}>gem@shreeshyamgroup.com</a>
+                      Official Email: <a href="mailto:design.shreeshyamco@gmail.com" style={{ color: 'var(--accent-skyblue)', fontWeight: 600 }}>design.shreeshyamco@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -106,7 +104,7 @@ export const Contact: React.FC = () => {
                     <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Business Hours</h4>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                       Monday – Saturday: 9:30 AM – 7:00 PM IST<br />
-                      Sunday: Closed (Emergency GeM Support Available)
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>
@@ -120,7 +118,7 @@ export const Contact: React.FC = () => {
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Chat directly with our official WhatsApp desk</p>
               </div>
               <a 
-                href="https://wa.me/919825030862?text=Hello%20Shree%20Shyam%20Group,%20I%20have%20an%20inquiry" 
+                href="https://wa.me/917600393779?text=Hello%20Shree%20Shyam%20Group,%20I%20have%20an%20inquiry" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn btn-sm" 
@@ -188,7 +186,7 @@ export const Contact: React.FC = () => {
                     <input 
                       type="tel" 
                       required 
-                      placeholder="+91 98765 00000" 
+                      placeholder="e.g. +91 98XXX XXXXX" 
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
                     />

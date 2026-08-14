@@ -1,13 +1,9 @@
 import React from 'react';
 import { 
   Users, 
-  Award, 
-  Target, 
   ShieldCheck, 
   Building2, 
   LayoutGrid, 
-  HeartHandshake, 
-  CheckCircle,
   Upload,
   Sparkles
 } from 'lucide-react';
@@ -90,46 +86,7 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Vision Mission Values */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem', marginBottom: '5rem' }}>
-          <div className="glass-card" style={{ padding: '2.25rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(56, 189, 248, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-skyblue)', marginBottom: '1.25rem' }}>
-              <Target size={26} />
-            </div>
-            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Our Vision</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', lineHeight: '1.6' }}>
-              To be the most trusted conglomerate recognized for outstanding government procurement execution, sustainable construction development, and high-productivity coworking ecosystems.
-            </p>
-          </div>
 
-          <div className="glass-card" style={{ padding: '2.25rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(37, 99, 235, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#60a5fa', marginBottom: '1.25rem' }}>
-              <Award size={26} />
-            </div>
-            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Our Mission</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', lineHeight: '1.6' }}>
-              To consistently exceed client expectations by supplying top-grade products via GeM portal, delivering durable real estate infrastructure, and nurturing enterprise growth at Sspacia.
-            </p>
-          </div>
-
-          <div className="glass-card" style={{ padding: '2.25rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(147, 51, 234, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c084fc', marginBottom: '1.25rem' }}>
-              <HeartHandshake size={26} />
-            </div>
-            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Core Values</h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--text-muted)', fontSize: '0.925rem' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-skyblue)" /> Uncompromising Quality & Integrity
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-skyblue)" /> Timely Procurement & Delivery
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-skyblue)" /> Customer-Centric Innovation
-              </li>
-            </ul>
-          </div>
-        </div>
 
         {/* Executive Leadership Section */}
         <div style={{ marginBottom: '5rem' }}>

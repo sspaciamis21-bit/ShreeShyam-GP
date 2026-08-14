@@ -112,19 +112,19 @@ export const Home: React.FC = () => {
           {/* Group Stats Ribbon */}
           <div className="glass-card stats-ribbon" style={{ marginTop: '4rem' }}>
             <div className="stat-item">
-              <div className="stat-number">500+</div>
+              <div className="stat-number">0</div>
               <div className="stat-label">GeM Govt Tenders & Orders</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">2M+</div>
+              <div className="stat-number">0</div>
               <div className="stat-label">Sq. Ft. Built & Developed</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">1,500+</div>
+              <div className="stat-number">0</div>
               <div className="stat-label">Sspacia Workstation Seats</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">25+</div>
+              <div className="stat-number">0</div>
               <div className="stat-label">Years Group Legacy</div>
             </div>
           </div>
@@ -272,7 +272,7 @@ export const Home: React.FC = () => {
               <span>Send Business Inquiry</span>
               <ArrowRight size={18} />
             </Link>
-            <a href="tel:+919825030862" className="btn btn-outline">
+            <a href="tel:+917600393779" className="btn btn-outline">
               <span>Call Corporate Desk</span>
             </a>
           </div>

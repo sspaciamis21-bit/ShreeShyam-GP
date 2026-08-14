@@ -70,15 +70,15 @@ export const Footer: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
                 <MapPin size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span>Shree Shyam Corporate Hub, Commercial Complex, India</span>
+                <span>6th Floor, Mercádo, Chimanlal Girdharlal Rd, opp. Municipal Market, Vasant Vihar, Ellisbridge, Ahmedabad, Gujarat 380009</span>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                 <Phone size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
-                <a href="tel:+919825030862" className="footer-link">+91 98250 30862</a>
+                <a href="tel:+917600393779" className="footer-link">+91 7600 393 779</a>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                 <Mail size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
-                <a href="mailto:info@shreeshyamgroup.com" className="footer-link">info@shreeshyamgroup.com</a>
+                <a href="mailto:design.shreeshyamco@gmail.com" className="footer-link">design.shreeshyamco@gmail.com</a>
               </div>
             </div>
           </div>
