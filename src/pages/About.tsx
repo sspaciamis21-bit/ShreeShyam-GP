@@ -20,7 +20,7 @@ interface LeaderMember {
   bio: string;
   imageSrc?: string;
   badge: string;
-  badgeColor: 'gold' | 'purple' | 'blue' | 'amber';
+  badgeColor: 'skyblue' | 'purple' | 'royal' | 'amber';
   icon: React.ReactNode;
 }
 
@@ -34,8 +34,8 @@ export const About: React.FC = () => {
       bio: 'Dilip Agarwal established Shree Shyam Group with a commitment to integrity, commercial excellence, and long-term value creation. Under his guidance, the group expanded into government supplies, civil construction, and enterprise solutions.',
       imageSrc: '/images/dilip-agarwal.jpg',
       badge: 'Founder',
-      badgeColor: 'gold',
-      icon: <Users size={40} color="var(--accent-gold)" />
+      badgeColor: 'skyblue',
+      icon: <Users size={40} color="var(--accent-skyblue)" />
     },
     {
       id: 'praveen-agarwal',
@@ -56,8 +56,8 @@ export const About: React.FC = () => {
       bio: 'Abhishekh Agarwal leads strategic operations, official GeM (Government e-Marketplace) portal bidding, vendor registrations, and government order fulfillment across state and central departments.',
       imageSrc: '/images/abhishekh-agarwal.jpg',
       badge: 'Director (GeM Lead)',
-      badgeColor: 'blue',
-      icon: <ShieldCheck size={40} color="#38bdf8" />
+      badgeColor: 'royal',
+      icon: <ShieldCheck size={40} color="#60a5fa" />
     },
     {
       id: 'komal-agarwal',
@@ -73,86 +73,84 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '4rem 0' }}>
+    <div style={{ padding: '3.5rem 0' }}>
       <div className="container">
         {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
-          <span className="badge badge-gold" style={{ marginBottom: '1rem' }}>
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
+          <span className="badge badge-skyblue" style={{ marginBottom: '1rem' }}>
             <Sparkles size={14} />
             <span>About Shree Shyam Group</span>
           </span>
-          <h1 style={{ fontSize: '3rem', marginBottom: '1.25rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '1.25rem' }}>
             Delivering Excellence Across <br />
-            <span className="gradient-gold-text">Key Industry Pillars</span>
+            <span className="gradient-skyblue-text">Key Industry Pillars</span>
           </h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.7' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
             Shree Shyam Group of Companies is a multi-disciplinary conglomerate driven by quality, ethics, and innovation. We bridge public sector procurement through GeM, civil infrastructure development, and contemporary coworking spaces.
           </p>
         </div>
 
         {/* Vision Mission Values */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '6rem' }}>
-          <div className="glass-card" style={{ padding: '2.5rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(230, 193, 92, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem', marginBottom: '5rem' }}>
+          <div className="glass-card" style={{ padding: '2.25rem' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(56, 189, 248, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-skyblue)', marginBottom: '1.25rem' }}>
               <Target size={26} />
             </div>
-            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Our Vision</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Our Vision</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', lineHeight: '1.6' }}>
               To be the most trusted conglomerate recognized for outstanding government procurement execution, sustainable construction development, and high-productivity coworking ecosystems.
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '2.5rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(2, 132, 199, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#38bdf8', marginBottom: '1.25rem' }}>
+          <div className="glass-card" style={{ padding: '2.25rem' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(37, 99, 235, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#60a5fa', marginBottom: '1.25rem' }}>
               <Award size={26} />
             </div>
-            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Our Mission</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Our Mission</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', lineHeight: '1.6' }}>
               To consistently exceed client expectations by supplying top-grade products via GeM portal, delivering durable real estate infrastructure, and nurturing enterprise growth at Sspacia.
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '2.5rem' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c084fc', marginBottom: '1.25rem' }}>
+          <div className="glass-card" style={{ padding: '2.25rem' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(147, 51, 234, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c084fc', marginBottom: '1.25rem' }}>
               <HeartHandshake size={26} />
             </div>
-            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>Core Values</h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+            <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem' }}>Core Values</h3>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--text-muted)', fontSize: '0.925rem' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-gold)" /> Uncompromising Quality & Integrity
+                <CheckCircle size={16} color="var(--accent-skyblue)" /> Uncompromising Quality & Integrity
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-gold)" /> Timely Procurement & Delivery
+                <CheckCircle size={16} color="var(--accent-skyblue)" /> Timely Procurement & Delivery
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle size={16} color="var(--accent-gold)" /> Customer-Centric Innovation
+                <CheckCircle size={16} color="var(--accent-skyblue)" /> Customer-Centric Innovation
               </li>
             </ul>
           </div>
         </div>
 
         {/* Executive Leadership Section */}
-        <div style={{ marginBottom: '6rem' }}>
-          <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3.5rem' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>Executive Board</span>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>Meet Our Leadership Team</h2>
+        <div style={{ marginBottom: '5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
+            <span className="badge badge-skyblue" style={{ marginBottom: '0.75rem' }}>Executive Board</span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.75rem' }}>Meet Our Leadership Team</h2>
             <p style={{ color: 'var(--text-muted)' }}>
-              The key visionaries guiding Shree Shyam Group's growth, strategic partnerships, and operational excellence.
+              The key visionaries guiding Shree Shyam Group's growth, strategic partnerships, and operational performance.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
             {leadershipTeam.map((member) => (
-              <div key={member.id} className="glass-card leader-card" style={{ padding: '2.5rem 1.75rem' }}>
+              <div key={member.id} className="glass-card leader-card" style={{ padding: '2.25rem 1.5rem' }}>
                 <div className="avatar-wrapper" style={{ 
-                  borderColor: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'blue' ? '#38bdf8' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-gold)' 
+                  borderColor: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'royal' ? '#60a5fa' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-skyblue)' 
                 }}>
-                  {/* Photo container checking for image or fallback vector */}
                   <img 
                     src={member.imageSrc} 
                     alt={member.name}
                     onError={(e) => {
-                      // Hide img if missing and show fallback SVG
                       (e.target as HTMLElement).style.display = 'none';
                       const parent = (e.target as HTMLElement).parentElement;
                       if (parent) {
@@ -171,14 +169,14 @@ export const About: React.FC = () => {
                   {member.badge}
                 </span>
 
-                <h3 className="leader-name" style={{ fontSize: '1.4rem' }}>{member.name}</h3>
+                <h3 className="leader-name" style={{ fontSize: '1.3rem' }}>{member.name}</h3>
                 <div className="leader-title" style={{ 
-                  color: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'blue' ? '#38bdf8' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-gold)' 
+                  color: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'royal' ? '#60a5fa' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-skyblue)' 
                 }}>
                   {member.role}
                 </div>
 
-                <p style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '0.75rem' }}>
+                <p style={{ fontSize: '0.825rem', color: 'var(--accent-skyblue)', fontWeight: 600, marginBottom: '0.75rem' }}>
                   "{member.tagline}"
                 </p>
 
@@ -189,11 +187,11 @@ export const About: React.FC = () => {
             ))}
           </div>
 
-          <div style={{ marginTop: '3rem', padding: '1.5rem', background: 'rgba(230, 193, 92, 0.05)', borderRadius: 'var(--radius-md)', border: '1px dashed var(--border-gold)', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Upload size={24} color="var(--accent-gold)" />
+          <div style={{ marginTop: '2.5rem', padding: '1.25rem 1.5rem', background: 'rgba(56, 189, 248, 0.05)', borderRadius: 'var(--radius-md)', border: '1px dashed var(--border-skyblue)', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Upload size={22} color="var(--accent-skyblue)" />
             <div style={{ flexGrow: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--accent-gold)' }}>Note for User / Admin:</div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+              <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--accent-skyblue)' }}>Note for User / Admin:</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                 You can easily upload photos for the 4 directors by placing photo files named <code>dilip-agarwal.jpg</code>, <code>praveen-agarwal.jpg</code>, <code>abhishekh-agarwal.jpg</code>, and <code>komal-agarwal.jpg</code> into the <code>public/images/</code> folder!
               </div>
             </div>
@@ -201,32 +199,32 @@ export const About: React.FC = () => {
         </div>
 
         {/* Milestones / Journey */}
-        <div className="glass-card" style={{ padding: '3rem' }}>
-          <h3 style={{ fontSize: '1.75rem', marginBottom: '2rem', textAlign: 'center' }}>Group Milestones</h3>
+        <div className="glass-card" style={{ padding: '2.5rem 2rem' }}>
+          <h3 style={{ fontSize: '1.6rem', marginBottom: '2rem', textAlign: 'center' }}>Group Milestones</h3>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-gold)', paddingLeft: '1.25rem' }}>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent-gold)' }}>Phase 1</div>
-              <h4 style={{ fontSize: '1.1rem', margin: '0.25rem 0' }}>Group Establishment</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Founded by Dilip Agarwal with core enterprise values and contracting excellence.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1.75rem' }}>
+            <div style={{ borderLeft: '3px solid var(--accent-skyblue)', paddingLeft: '1.1rem' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--accent-skyblue)' }}>Phase 1</div>
+              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Group Establishment</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Founded by Dilip Agarwal with core enterprise values and contracting excellence.</p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #38bdf8', paddingLeft: '1.25rem' }}>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#38bdf8' }}>Phase 2</div>
-              <h4 style={{ fontSize: '1.1rem', margin: '0.25rem 0' }}>GeM Government Portal</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Expanding into GeM portal vendor operations led by Abhishekh Agarwal for state & central bids.</p>
+            <div style={{ borderLeft: '3px solid #60a5fa', paddingLeft: '1.1rem' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#60a5fa' }}>Phase 2</div>
+              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>GeM Government Portal</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Expanding into GeM portal vendor operations led by Abhishekh Agarwal for state & central bids.</p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #fbbf24', paddingLeft: '1.25rem' }}>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fbbf24' }}>Phase 3</div>
-              <h4 style={{ fontSize: '1.1rem', margin: '0.25rem 0' }}>Construction Expansion</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Developing major commercial real estate projects under Komal Agarwal's leadership.</p>
+            <div style={{ borderLeft: '3px solid #fbbf24', paddingLeft: '1.1rem' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fbbf24' }}>Phase 3</div>
+              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Construction Expansion</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Developing major commercial real estate projects under Komal Agarwal's leadership.</p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #c084fc', paddingLeft: '1.25rem' }}>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#c084fc' }}>Phase 4</div>
-              <h4 style={{ fontSize: '1.1rem', margin: '0.25rem 0' }}>Sspacia Coworking</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Praveen Agarwal launches Sspacia, building flexible coworking hubs for modern enterprises.</p>
+            <div style={{ borderLeft: '3px solid #c084fc', paddingLeft: '1.1rem' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#c084fc' }}>Phase 4</div>
+              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Sspacia Coworking</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Praveen Agarwal launches Sspacia, building flexible coworking hubs for modern enterprises.</p>
             </div>
           </div>
         </div>

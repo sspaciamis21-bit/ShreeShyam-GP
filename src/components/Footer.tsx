@@ -14,9 +14,9 @@ export const Footer: React.FC = () => {
             <p style={{ color: 'var(--text-muted)', marginTop: '1.25rem', fontSize: '0.925rem', maxWidth: '340px' }}>
               Shree Shyam Group of Companies is a multi-sector conglomerate operating in official GeM (Government e-Marketplace) procurement, modern real estate construction, and premium coworking spaces (Sspacia).
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
-              <span className="badge badge-gold">GeM Approved</span>
-              <span className="badge badge-blue">Govt Contractor</span>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+              <span className="badge badge-skyblue">GeM Approved</span>
+              <span className="badge badge-royal">Govt Contractor</span>
               <span className="badge badge-purple">Sspacia Workspaces</span>
             </div>
           </div>
@@ -69,16 +69,16 @@ export const Footer: React.FC = () => {
             <h4>Contact Info</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-                <MapPin size={18} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <MapPin size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>Shree Shyam Corporate Hub, Commercial Complex, India</span>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Phone size={18} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
-                <span>+91 98250 30862</span>
+                <Phone size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
+                <a href="tel:+919825030862" className="footer-link">+91 98250 30862</a>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Mail size={18} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
-                <span>info@shreeshyamgroup.com</span>
+                <Mail size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
+                <a href="mailto:info@shreeshyamgroup.com" className="footer-link">info@shreeshyamgroup.com</a>
               </div>
             </div>
           </div>

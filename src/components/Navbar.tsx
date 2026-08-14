@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { Sun, Moon, Menu, X, ArrowUpRight, PhoneCall } from 'lucide-react';
+import { Menu, X, ArrowUpRight, PhoneCall, ChevronRight } from 'lucide-react';
 
-interface NavbarProps {
-  theme: 'dark' | 'light';
-  toggleTheme: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
+export const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -34,17 +29,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </NavLink>
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            onClick={toggleTheme} 
-            className="btn btn-outline btn-sm" 
-            title="Toggle theme"
-            style={{ padding: '0.5rem', borderRadius: '50%' }}
-          >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          <Link to="/contact" className="btn btn-gold btn-sm desk-only">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <Link to="/contact" className="btn btn-primary btn-sm desk-only">
             <span>Inquire Now</span>
             <ArrowUpRight size={16} />
           </Link>
@@ -54,31 +40,59 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Nav Overlay Drawer */}
       {mobileOpen && (
-        <div style={{
-          background: 'var(--bg-surface)',
-          borderBottom: '1px solid var(--border-color)',
-          padding: '1.5rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
-          <NavLink to="/" onClick={() => setMobileOpen(false)} className="nav-link">Home</NavLink>
-          <NavLink to="/about" onClick={() => setMobileOpen(false)} className="nav-link">About Us</NavLink>
-          <NavLink to="/businesses" onClick={() => setMobileOpen(false)} className="nav-link">Our Businesses</NavLink>
-          <NavLink to="/contact" onClick={() => setMobileOpen(false)} className="nav-link">Contact Us</NavLink>
-          <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn btn-gold" style={{ marginTop: '0.5rem' }}>
-            <PhoneCall size={16} />
-            <span>Contact Office</span>
-          </Link>
+        <div className="mobile-nav-overlay">
+          <NavLink 
+            to="/" 
+            onClick={() => setMobileOpen(false)} 
+            className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+          >
+            <span>Home</span>
+            <ChevronRight size={18} />
+          </NavLink>
+
+          <NavLink 
+            to="/about" 
+            onClick={() => setMobileOpen(false)} 
+            className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+          >
+            <span>About Us</span>
+            <ChevronRight size={18} />
+          </NavLink>
+
+          <NavLink 
+            to="/businesses" 
+            onClick={() => setMobileOpen(false)} 
+            className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+          >
+            <span>Our Businesses</span>
+            <ChevronRight size={18} />
+          </NavLink>
+
+          <NavLink 
+            to="/contact" 
+            onClick={() => setMobileOpen(false)} 
+            className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+          >
+            <span>Contact Us</span>
+            <ChevronRight size={18} />
+          </NavLink>
+
+          <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
+            <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn btn-primary" style={{ width: '100%' }}>
+              <PhoneCall size={18} />
+              <span>Contact Office Desk</span>
+            </Link>
+          </div>
         </div>
       )}
     </header>
   );
 };
+

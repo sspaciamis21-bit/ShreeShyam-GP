@@ -8,7 +8,6 @@ import { Businesses } from './pages/Businesses';
 import { Contact } from './pages/Contact';
 
 export const App: React.FC = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const location = useLocation();
 
   // Scroll to top on route change
@@ -16,15 +15,9 @@ export const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
-
   return (
-    <div className="app-root" data-theme={theme} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+    <div className="app-root" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Navbar />
       <main style={{ flexGrow: 1 }}>
         <Routes>
           <Route path="/" element={<Home />} />
