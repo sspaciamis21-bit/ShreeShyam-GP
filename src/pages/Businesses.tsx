@@ -157,7 +157,7 @@ export const Businesses: React.FC = () => {
                 <span className="badge badge-purple" style={{ marginBottom: '0.5rem' }}>Division 03 • Managed Workspace Brand</span>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)' }}>Sspacia Coworking Spaces</h2>
               </div>
-              <a href="http://localhost:3000" target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+              <a href="https://www.sspacia.com" target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
                 <span>Visit Sspacia Platform</span>
                 <ExternalLink size={16} />
               </a>

@@ -185,7 +185,7 @@ export const Home: React.FC = () => {
               <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', flexGrow: 1, marginBottom: '1.5rem', lineHeight: '1.6' }}>
                 Founded by Praveen Agarwal, Sspacia provides premium flexible workspace solutions, custom corporate office suites, meeting rooms, and high-speed enterprise connectivity for startups and established enterprises.
               </p>
-              <a href="http://localhost:3000" target="_blank" rel="noreferrer" className="btn btn-outline btn-sm" style={{ alignSelf: 'flex-start' }}>
+              <a href="https://www.sspacia.com" target="_blank" rel="noreferrer" className="btn btn-outline btn-sm" style={{ alignSelf: 'flex-start' }}>
                 <span>Visit Sspacia Website</span>
                 <ExternalLink size={14} />
               </a>

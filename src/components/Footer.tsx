@@ -11,13 +11,13 @@ export const Footer: React.FC = () => {
           {/* Col 1 */}
           <div>
             <Logo size="lg" />
-            <p style={{ color: 'var(--text-muted)', marginTop: '1.25rem', fontSize: '0.925rem', maxWidth: '340px' }}>
+            <p className="footer-desc">
               Shree Shyam Group of Companies is a multi-sector conglomerate operating in official GeM (Government e-Marketplace) procurement, modern real estate construction, and premium coworking spaces (Sspacia).
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-              <span className="badge badge-skyblue">GeM Approved</span>
-              <span className="badge badge-royal">Govt Contractor</span>
-              <span className="badge badge-purple">Sspacia Workspaces</span>
+              <span className="badge badge-skyblue" style={{ fontWeight: 600 }}>GeM Approved</span>
+              <span className="badge badge-royal" style={{ fontWeight: 600 }}>Govt Contractor</span>
+              <span className="badge badge-purple" style={{ fontWeight: 600 }}>Sspacia Workspaces</span>
             </div>
           </div>
 
@@ -37,28 +37,28 @@ export const Footer: React.FC = () => {
             <h4>Business Divisions</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/businesses#gem" className="footer-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <ShieldCheck size={14} color="#38bdf8" />
+                <Link to="/businesses#gem" className="footer-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <ShieldCheck size={16} color="#38bdf8" />
                   <span>GeM Portal & Govt Supplies</span>
                 </Link>
               </li>
               <li>
-                <Link to="/businesses#construction" className="footer-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <Building2 size={14} color="#fbbf24" />
+                <Link to="/businesses#construction" className="footer-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Building2 size={16} color="#fbbf24" />
                   <span>Construction & Infrastructure</span>
                 </Link>
               </li>
               <li>
                 <a 
-                  href="http://localhost:3000" 
+                  href="https://www.sspacia.com" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="footer-link" 
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                 >
-                  <LayoutGrid size={14} color="#c084fc" />
+                  <LayoutGrid size={16} color="#c084fc" />
                   <span>Sspacia Coworking</span>
-                  <ExternalLink size={12} />
+                  <ExternalLink size={13} />
                 </a>
               </li>
             </ul>
@@ -67,18 +67,18 @@ export const Footer: React.FC = () => {
           {/* Col 4 */}
           <div className="footer-col">
             <h4>Contact Info</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-                <MapPin size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span>6th Floor, Mercádo, Chimanlal Girdharlal Rd, opp. Municipal Market, Vasant Vihar, Ellisbridge, Ahmedabad, Gujarat 380009</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.925rem' }}>
+              <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'flex-start' }}>
+                <MapPin size={20} color="#38bdf8" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span className="footer-contact-text">6th Floor, Mercádo, Chimanlal Girdharlal Rd, opp. Municipal Market, Vasant Vihar, Ellisbridge, Ahmedabad, Gujarat 380009</span>
               </div>
-              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Phone size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
-                <a href="tel:+917600393779" className="footer-link">+91 7600 393 779</a>
+              <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
+                <Phone size={18} color="#38bdf8" style={{ flexShrink: 0 }} />
+                <a href="tel:+917600393779" className="footer-link" style={{ color: '#f8fafc', fontWeight: 600 }}>+91 7600 393 779</a>
               </div>
-              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Mail size={18} color="var(--accent-skyblue)" style={{ flexShrink: 0 }} />
-                <a href="mailto:design.shreeshyamco@gmail.com" className="footer-link">design.shreeshyamco@gmail.com</a>
+              <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
+                <Mail size={18} color="#38bdf8" style={{ flexShrink: 0 }} />
+                <a href="mailto:design.shreeshyamco@gmail.com" className="footer-link" style={{ color: '#f8fafc', fontWeight: 600 }}>design.shreeshyamco@gmail.com</a>
               </div>
             </div>
           </div>
@@ -87,9 +87,9 @@ export const Footer: React.FC = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Shree Shyam Group of Companies. All Rights Reserved.</p>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <Link to="/privacy" className="footer-link">Privacy Policy</Link>
-            <Link to="/terms" className="footer-link">Terms of Service</Link>
+          <div style={{ display: 'flex', gap: '1.75rem' }}>
+            <Link to="/privacy" className="footer-link" style={{ fontSize: '0.875rem' }}>Privacy Policy</Link>
+            <Link to="/terms" className="footer-link" style={{ fontSize: '0.875rem' }}>Terms of Service</Link>
           </div>
         </div>
       </div>
