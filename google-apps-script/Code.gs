@@ -5,15 +5,16 @@
  * Sheet ID: 1Uy9L1yrF5kj9qPAqtkyGtoNBFGv6ToKeQKkcw2SLeTg
  * Sheet Tab: Sheet1
  * Primary Email: sales@sspacia.com
- * CC Email: design.shreeshyamco@gmail.com
+ * CC Email: praveen@shreeshyamgp.com
  * ==============================================================================
  */
 
 const CONFIG = {
   SPREADSHEET_ID: "1Uy9L1yrF5kj9qPAqtkyGtoNBFGv6ToKeQKkcw2SLeTg",
   SHEET_NAME: "Sheet1",
+  SENDER_EMAIL: "mis.sspacia01@gmail.com",
   PRIMARY_EMAIL: "sales@sspacia.com",
-  CC_EMAIL: "design.shreeshyamco@gmail.com",
+  CC_EMAIL: "praveen@shreeshyamgp.com",
   ORGANIZATION_NAME: "Shree Shyam Group of Companies",
   PHONE: "+91 7600 393 779"
 };
@@ -23,7 +24,7 @@ const CONFIG = {
  * Run this function once by selecting 'testSendEmail' in the toolbar dropdown above and clicking 'Run'.
  * This will:
  * 1. Prompt Google's one-time permission popup (Authorize Email Permissions).
- * 2. Send an instant test email to sales@sspacia.com & CC design.shreeshyamco@gmail.com.
+ * 2. Send an instant test email to sales@sspacia.com & CC praveen@shreeshyamgp.com.
  */
 function testSendEmail() {
   const result = sendInquiryNotificationEmail({
@@ -114,7 +115,7 @@ function doPost(e) {
       "New Lead"
     ]);
 
-    // 2. Send Immediate Email to sales@sspacia.com with CC to design.shreeshyamco@gmail.com
+    // 2. Send Immediate Email to sales@sspacia.com with CC to praveen@shreeshyamgp.com
     let emailStatus = "sent";
     try {
       sendInquiryNotificationEmail({
@@ -284,20 +285,32 @@ Shree Shyam Group of Companies
     </html>
   `;
 
+  // Determine if a custom 'from' alias is available
+  let sendOptions = {
+    cc: CONFIG.CC_EMAIL,
+    htmlBody: htmlBody,
+    name: "Shree Shyam Group Inquiries",
+    replyTo: (email && email !== "Not Specified") ? email : undefined
+  };
+
+  try {
+    const aliases = GmailApp.getAliases();
+    if (aliases && aliases.indexOf(CONFIG.SENDER_EMAIL) !== -1) {
+      sendOptions.from = CONFIG.SENDER_EMAIL;
+    }
+  } catch (aliasErr) {
+    Logger.log("Alias check note: " + aliasErr.toString());
+  }
+
   // 1. Try GmailApp first (shows in your Gmail Sent folder)
   try {
-    GmailApp.sendEmail(CONFIG.PRIMARY_EMAIL, subject, plainTextBody, {
-      cc: CONFIG.CC_EMAIL,
-      htmlBody: htmlBody,
-      name: "Shree Shyam Group Inquiries",
-      replyTo: (email && email !== "Not Specified") ? email : undefined
-    });
+    GmailApp.sendEmail(CONFIG.PRIMARY_EMAIL, subject, plainTextBody, sendOptions);
     return { success: true, service: "GmailApp" };
   } catch (gmailErr) {
     Logger.log("GmailApp error, attempting MailApp: " + gmailErr.toString());
     
     // 2. Fallback to MailApp with mandatory body field
-    MailApp.sendEmail({
+    const mailAppOptions = {
       to: CONFIG.PRIMARY_EMAIL,
       cc: CONFIG.CC_EMAIL,
       subject: subject,
@@ -305,7 +318,8 @@ Shree Shyam Group of Companies
       htmlBody: htmlBody,
       name: "Shree Shyam Group Inquiries",
       replyTo: (email && email !== "Not Specified") ? email : undefined
-    });
+    };
+    MailApp.sendEmail(mailAppOptions);
     return { success: true, service: "MailApp" };
   }
 }

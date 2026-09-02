@@ -1,22 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Users, 
   ShieldCheck, 
   Building2, 
   LayoutGrid, 
+  Award, 
+  CheckCircle2, 
+  Target, 
+  Compass, 
   Upload,
-  Sparkles
+  ArrowRight,
+  TrendingUp
 } from 'lucide-react';
 
 interface LeaderMember {
   id: string;
   name: string;
   role: string;
+  divisionTag: string;
   tagline: string;
   bio: string;
-  imageSrc?: string;
-  badge: string;
-  badgeColor: 'skyblue' | 'purple' | 'royal' | 'amber';
+  imageSrc: string;
   icon: React.ReactNode;
 }
 
@@ -25,167 +30,311 @@ export const About: React.FC = () => {
     {
       id: 'dilip-agarwal',
       name: 'Dilip Agarwal',
-      role: 'Founder',
+      role: 'Founder & Visionary',
+      divisionTag: 'Group Leadership',
       tagline: 'Founding Pillar & Group Visionary',
-      bio: 'Dilip Agarwal established Shree Shyam Group with a commitment to integrity, commercial excellence, and long-term value creation. Under his guidance, the group expanded into government supplies, civil construction, and enterprise solutions.',
+      bio: 'Dilip Agarwal established Shree Shyam Group with a deep commitment to commercial integrity, transparent contracting, and long-term nation-building value. Under his foundational guidance, the group systematically diversified from civil contracting into large-scale government procurement and contemporary managed office spaces.',
       imageSrc: '/images/dilip-agarwal.jpg',
-      badge: 'Founder',
-      badgeColor: 'skyblue',
-      icon: <Users size={40} color="var(--accent-skyblue)" />
+      icon: <Users size={48} color="var(--corp-gold-light)" />
     },
     {
       id: 'praveen-agarwal',
       name: 'Praveen Agarwal',
       role: 'Director & Founder of Sspacia Coworking',
-      tagline: 'Director & Founder of Coworking Space Sspacia',
-      bio: 'Praveen Agarwal is a Director of Shree Shyam Group and the visionary Founder of Sspacia Coworking Spaces. He pioneered modern managed office environments, flexible workspace cabins, and corporate community hubs.',
+      divisionTag: 'Workspaces Division',
+      tagline: 'Pioneering Modern Collaborative Workspaces',
+      bio: 'Praveen Agarwal is a Director of Shree Shyam Group and the visionary Founder of Sspacia Coworking Spaces. Anticipating the future of modern work, he pioneered luxury managed office suites, soundproof cabins, and vibrant enterprise community hubs catering to startups, corporate branches, and growing enterprises.',
       imageSrc: '/images/praveen-agarwal.jpg',
-      badge: 'Sspacia Founder & Director',
-      badgeColor: 'purple',
-      icon: <LayoutGrid size={40} color="#c084fc" />
+      icon: <LayoutGrid size={48} color="var(--corp-gold-light)" />
     },
     {
       id: 'abhishekh-agarwal',
       name: 'Abhishekh Agarwal',
-      role: 'Director',
-      tagline: 'Director - GeM Operations & Govt Partnerships',
-      bio: 'Abhishekh Agarwal leads strategic operations, official GeM (Government e-Marketplace) portal bidding, vendor registrations, and government order fulfillment across state and central departments.',
+      role: 'Director (GeM Portal & Public Supplies)',
+      divisionTag: 'Public Procurement Division',
+      tagline: 'Driving Public Sector Procurement Excellence',
+      bio: 'Abhishekh Agarwal spearheads the group’s official Government e-Marketplace (GeM) portal operations, tender strategies, and vendor compliance. Under his leadership, Shree Shyam Group participates actively in competitive government bids, fulfilling critical supply requirements across state and central departments.',
       imageSrc: '/images/abhishekh-agarwal.jpg',
-      badge: 'Director (GeM Lead)',
-      badgeColor: 'royal',
-      icon: <ShieldCheck size={40} color="#60a5fa" />
+      icon: <ShieldCheck size={48} color="var(--corp-gold-light)" />
     },
     {
       id: 'komal-agarwal',
       name: 'Komal Agarwal',
-      role: 'Director',
-      tagline: 'Director - Construction & Infrastructure Development',
-      bio: 'Komal Agarwal oversees project execution standards, real estate growth, and civil engineering infrastructure projects, ensuring safety, architectural elegance, and timely project delivery.',
+      role: 'Director (Construction & Infrastructure)',
+      divisionTag: 'Real Estate Division',
+      tagline: 'Engineering Quality & Architectural Precision',
+      bio: 'Komal Agarwal oversees project execution standards, commercial real estate growth, and civil engineering infrastructure projects. He guarantees structural durability, modern aesthetics, safety certifications, and timely milestone deliveries across all turnkey developments.',
       imageSrc: '/images/komal-agarwal.jpg',
-      badge: 'Director (Construction Lead)',
-      badgeColor: 'amber',
-      icon: <Building2 size={40} color="#fbbf24" />
+      icon: <Building2 size={48} color="var(--corp-gold-light)" />
     }
   ];
 
   return (
-    <div style={{ padding: '3.5rem 0' }}>
-      <div className="container">
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
-          <span className="badge badge-skyblue" style={{ marginBottom: '1rem' }}>
-            <Sparkles size={14} />
-            <span>About Shree Shyam Group</span>
-          </span>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '1.25rem' }}>
-            Delivering Excellence Across <br />
-            <span className="gradient-skyblue-text">Key Industry Pillars</span>
-          </h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-            Shree Shyam Group of Companies is a multi-disciplinary conglomerate driven by quality, ethics, and innovation. We bridge public sector procurement through GeM, civil infrastructure development, and contemporary coworking spaces.
-          </p>
+    <div className="page-transition-enter">
+      {/* Page Header Banner */}
+      <section style={{ 
+        padding: '7.5rem 0 4.5rem', 
+        background: 'linear-gradient(135deg, #0B1120 0%, #1E293B 100%)', 
+        color: '#FFFFFF',
+        borderBottom: '3px solid var(--corp-maroon)'
+      }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px' }}>
+            <span className="section-eyebrow" style={{ color: 'var(--corp-gold-light)' }}>
+              Our Story & Heritage
+            </span>
+            <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', color: '#FFFFFF', marginBottom: '1.25rem', fontFamily: 'var(--font-heading)', lineHeight: 1.15 }}>
+              A Legacy of Trust, Quality & Enterprise
+            </h1>
+            <p style={{ color: 'var(--text-light-secondary)', fontSize: '1.15rem', lineHeight: '1.7' }}>
+              Shree Shyam Group of Companies is a multi-sector Indian corporate group built on the bedrock of institutional governance, operational agility, and lasting customer partnerships.
+            </p>
+          </div>
         </div>
+      </section>
 
+      {/* Heritage & Purpose Section */}
+      <section id="legacy" className="section-padding" style={{ background: '#FFFFFF' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <span className="section-eyebrow">Conglomerate Heritage</span>
+              <h2 className="section-heading-lg">Building Lasting Value Across Key Economic Pillars</h2>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-dark-muted)', lineHeight: '1.75', marginBottom: '1.5rem' }}>
+                From our foundational start in civil contracting to becoming an authorized vendor on India’s official <strong>Government e-Marketplace (GeM)</strong> and pioneering collaborative ecosystems through <strong>Sspacia Coworking</strong>, Shree Shyam Group has consistently evolved to meet the nation's changing infrastructural and commercial needs.
+              </p>
+              <p style={{ fontSize: '1.025rem', color: 'var(--text-dark-muted)', lineHeight: '1.75', marginBottom: '2rem' }}>
+                We believe that true enterprise excellence lies in the harmony between ethical conduct, strict statutory compliance, and modern architectural vision.
+              </p>
+            </div>
 
+            <div style={{ position: 'relative' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85" 
+                alt="Corporate Architecture" 
+                style={{ width: '100%', height: '440px', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-medium)' }}
+              />
+              <div style={{ 
+                position: 'absolute', 
+                bottom: '-1.5rem', 
+                right: '1.5rem', 
+                background: 'var(--corp-slate)', 
+                color: '#FFFFFF', 
+                padding: '1.25rem 1.75rem', 
+                borderRadius: 'var(--radius-sm)',
+                borderLeft: '4px solid var(--corp-gold-light)',
+                maxWidth: '280px',
+                boxShadow: 'var(--shadow-elevated)'
+              }}>
+                <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--corp-gold-light)', fontWeight: 700, marginBottom: '0.25rem' }}>
+                  Core Mandate
+                </div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>
+                  Integrity, Agility & Superior Execution
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {/* Executive Leadership Section */}
-        <div style={{ marginBottom: '5rem' }}>
-          <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            <span className="badge badge-skyblue" style={{ marginBottom: '0.75rem' }}>Executive Board</span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.75rem' }}>Meet Our Leadership Team</h2>
-            <p style={{ color: 'var(--text-muted)' }}>
-              The key visionaries guiding Shree Shyam Group's growth, strategic partnerships, and operational performance.
+      {/* Corporate Purpose & Values */}
+      <section id="values" className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3.5rem' }}>
+            <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Purpose & Commitments</span>
+            <h2 className="section-heading-lg">Guided by Enduring Principles</h2>
+            <p className="section-desc-lg" style={{ margin: '0 auto' }}>
+              Our core values guide every interaction with government procurement officials, corporate tenants, and construction partners.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
-            {leadershipTeam.map((member) => (
-              <div key={member.id} className="glass-card leader-card" style={{ padding: '2.25rem 1.5rem' }}>
-                <div className="avatar-wrapper" style={{ 
-                  borderColor: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'royal' ? '#60a5fa' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-skyblue)' 
-                }}>
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-icon-box">
+                <Target size={28} />
+              </div>
+              <h4 className="value-card-title">Visionary Focus</h4>
+              <p className="value-card-desc">
+                Building durable infrastructure and long-standing commercial solutions that stand the test of time and market changes.
+              </p>
+            </div>
+
+            <div className="value-card">
+              <div className="value-icon-box">
+                <ShieldCheck size={28} />
+              </div>
+              <h4 className="value-card-title">Govt Compliance</h4>
+              <p className="value-card-desc">
+                Rigorous adherence to GeM portal bidding protocols, financial audits, and certified industrial standards.
+              </p>
+            </div>
+
+            <div className="value-card">
+              <div className="value-icon-box">
+                <Compass size={28} />
+              </div>
+              <h4 className="value-card-title">Client Centricity</h4>
+              <p className="value-card-desc">
+                Prioritizing our clients’ custom requirements in corporate office spaces, construction blueprints, and supply schedules.
+              </p>
+            </div>
+
+            <div className="value-card">
+              <div className="value-icon-box">
+                <TrendingUp size={28} />
+              </div>
+              <h4 className="value-card-title">Sustainable Growth</h4>
+              <p className="value-card-desc">
+                Balancing rapid commercial expansion with environmental responsibility, energy-efficient spaces, and community growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Board of Directors Section */}
+      <section id="leadership" className="section-padding" style={{ background: '#FFFFFF' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 3.5rem' }}>
+            <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Executive Leadership</span>
+            <h2 className="section-heading-lg">Board of Directors</h2>
+            <p className="section-desc-lg" style={{ margin: '0 auto' }}>
+              The visionary directors steering Shree Shyam Group’s strategic expansion, public partnerships, and operational performance.
+            </p>
+          </div>
+
+          <div className="leaders-board-grid">
+            {leadershipTeam.map((leader) => (
+              <div key={leader.id} className="leader-corp-card">
+                <div className="leader-photo-box">
                   <img 
-                    src={member.imageSrc} 
-                    alt={member.name}
+                    src={leader.imageSrc} 
+                    alt={leader.name}
+                    className="leader-photo-img"
                     onError={(e) => {
                       (e.target as HTMLElement).style.display = 'none';
                       const parent = (e.target as HTMLElement).parentElement;
                       if (parent) {
-                        const fallback = parent.querySelector('.avatar-placeholder') as HTMLElement;
-                        if (fallback) fallback.style.display = 'flex';
+                        const placeholder = parent.querySelector('.leader-photo-placeholder') as HTMLElement;
+                        if (placeholder) placeholder.style.display = 'flex';
                       }
                     }}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                   />
-                  <div className="avatar-placeholder" style={{ display: 'none' }}>
-                    {member.icon}
+                  <div className="leader-photo-placeholder" style={{ display: 'none' }}>
+                    {leader.icon}
+                    <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
                   </div>
                 </div>
 
-                <span className={`badge badge-${member.badgeColor}`} style={{ marginBottom: '0.75rem' }}>
-                  {member.badge}
-                </span>
+                <div className="leader-details-body">
+                  <span className="leader-badge-tag">{leader.divisionTag}</span>
+                  <h3 className="leader-full-name">{leader.name}</h3>
+                  <div className="leader-corporate-role">{leader.role}</div>
 
-                <h3 className="leader-name" style={{ fontSize: '1.3rem' }}>{member.name}</h3>
-                <div className="leader-title" style={{ 
-                  color: member.badgeColor === 'purple' ? '#c084fc' : member.badgeColor === 'royal' ? '#60a5fa' : member.badgeColor === 'amber' ? '#fbbf24' : 'var(--accent-skyblue)' 
-                }}>
-                  {member.role}
+                  <p style={{ fontSize: '0.82rem', color: 'var(--corp-maroon)', fontWeight: 700, marginBottom: '0.75rem', fontStyle: 'italic' }}>
+                    "{leader.tagline}"
+                  </p>
+
+                  <p className="leader-bio-summary">
+                    {leader.bio}
+                  </p>
                 </div>
-
-                <p style={{ fontSize: '0.825rem', color: 'var(--accent-skyblue)', fontWeight: 600, marginBottom: '0.75rem' }}>
-                  "{member.tagline}"
-                </p>
-
-                <p className="leader-bio">
-                  {member.bio}
-                </p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2.5rem', padding: '1.25rem 1.5rem', background: 'rgba(56, 189, 248, 0.05)', borderRadius: 'var(--radius-md)', border: '1px dashed var(--border-skyblue)', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Upload size={22} color="var(--accent-skyblue)" />
+          {/* Guidance note for photo uploads */}
+          <div style={{ 
+            marginTop: '3.5rem', 
+            padding: '1.5rem 2rem', 
+            background: 'var(--bg-platinum)', 
+            borderRadius: 'var(--radius-sm)', 
+            border: '1px dashed var(--border-medium)', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '1.25rem',
+            flexWrap: 'wrap'
+          }}>
+            <Upload size={24} color="var(--corp-maroon)" />
             <div style={{ flexGrow: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--accent-skyblue)' }}>Note for User / Admin:</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                You can easily upload photos for the 4 directors by placing photo files named <code>dilip-agarwal.jpg</code>, <code>praveen-agarwal.jpg</code>, <code>abhishekh-agarwal.jpg</code>, and <code>komal-agarwal.jpg</code> into the <code>public/images/</code> folder!
+              <div style={{ fontWeight: 700, fontSize: '0.925rem', color: 'var(--corp-slate)', fontFamily: 'var(--font-heading)' }}>
+                Photo Upload Note:
+              </div>
+              <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-muted)' }}>
+                To customize the directors' portraits, save photos named <code>dilip-agarwal.jpg</code>, <code>praveen-agarwal.jpg</code>, <code>abhishekh-agarwal.jpg</code>, and <code>komal-agarwal.jpg</code> in the <code>public/images/</code> folder.
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Milestones / Journey */}
-        <div className="glass-card" style={{ padding: '2.5rem 2rem' }}>
-          <h3 style={{ fontSize: '1.6rem', marginBottom: '2rem', textAlign: 'center' }}>Group Milestones</h3>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1.75rem' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-skyblue)', paddingLeft: '1.1rem' }}>
-              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--accent-skyblue)' }}>Phase 1</div>
-              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Group Establishment</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Founded by Dilip Agarwal with core enterprise values and contracting excellence.</p>
+      {/* Group Milestones & Journey */}
+      <section id="milestones" className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3.5rem' }}>
+            <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Growth Trajectory</span>
+            <h2 className="section-heading-lg">Group Milestones & Evolution</h2>
+            <p className="section-desc-lg" style={{ margin: '0 auto' }}>
+              Key eras in the development and expansion of Shree Shyam Group of Companies.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            {/* Era 1 */}
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
+                Phase 01
+              </div>
+              <h4 style={{ fontSize: '1.15rem', color: 'var(--corp-slate)', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
+                Foundational Establishment
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', lineHeight: '1.6' }}>
+                Founded by Dilip Agarwal with a primary focus on civil engineering standards, contracting ethics, and commercial trust.
+              </p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #60a5fa', paddingLeft: '1.1rem' }}>
-              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#60a5fa' }}>Phase 2</div>
-              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>GeM Government Portal</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Expanding into GeM portal vendor operations led by Abhishekh Agarwal for state & central bids.</p>
+            {/* Era 2 */}
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
+                Phase 02
+              </div>
+              <h4 style={{ fontSize: '1.15rem', color: 'var(--corp-slate)', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
+                GeM Govt Portal Entry
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', lineHeight: '1.6' }}>
+                Abhishekh Agarwal leads entry into official GeM portal bidding, winning high-volume supply contracts for government ministries and PSUs.
+              </p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #fbbf24', paddingLeft: '1.1rem' }}>
-              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fbbf24' }}>Phase 3</div>
-              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Construction Expansion</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Developing major commercial real estate projects under Komal Agarwal's leadership.</p>
+            {/* Era 3 */}
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
+                Phase 03
+              </div>
+              <h4 style={{ fontSize: '1.15rem', color: 'var(--corp-slate)', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
+                Infrastructure Scaling
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', lineHeight: '1.6' }}>
+                Under Komal Agarwal's guidance, the group completes landmark commercial complexes, urban housing, and turnkey infrastructure projects.
+              </p>
             </div>
 
-            <div style={{ borderLeft: '3px solid #c084fc', paddingLeft: '1.1rem' }}>
-              <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#c084fc' }}>Phase 4</div>
-              <h4 style={{ fontSize: '1.05rem', margin: '0.25rem 0' }}>Sspacia Coworking</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Praveen Agarwal launches Sspacia, building flexible coworking hubs for modern enterprises.</p>
+            {/* Era 4 */}
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
+                Phase 04
+              </div>
+              <h4 style={{ fontSize: '1.15rem', color: 'var(--corp-slate)', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
+                Sspacia Coworking Launch
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', lineHeight: '1.6' }}>
+                Praveen Agarwal launches Sspacia, creating flexible premium managed workspaces and innovation hubs for growing enterprises.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

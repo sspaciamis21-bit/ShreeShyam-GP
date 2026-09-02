@@ -6,7 +6,7 @@
 
 ### Email Routing
 - **Primary Recipient**: `sales@sspacia.com`
-- **CC**: `design.shreeshyamco@gmail.com`
+- **CC**: `praveen@shreeshyamgp.com`
 
 ---
 
@@ -31,4 +31,4 @@
 1. Automatically formats header columns on `Sheet1`:
    - `Timestamp` | `Full Name` | `Mobile No` | `Email Address` | `Target Division` | `Requirement Details` | `Status`
 2. Appends every new inquiry row with IST timestamps.
-3. Automatically triggers a branded, responsive executive HTML email to **`sales@sspacia.com`** and **`design.shreeshyamco@gmail.com`** with quick-action click-to-call and click-to-WhatsApp buttons!
+3. Automatically triggers a branded, responsive executive HTML email to **`sales@sspacia.com`** and **`praveen@shreeshyamgp.com`** with quick-action click-to-call and click-to-WhatsApp buttons!
