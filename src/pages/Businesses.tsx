@@ -33,6 +33,16 @@ export const Businesses: React.FC = () => {
     }
   }, [location.hash]);
 
+  const handleSspaciaSectionClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    // If the click is on the internal 'Book Workspace Tour' link, allow normal navigation
+    if (target.closest('.stay-internal-link')) {
+      return;
+    }
+    // Otherwise, redirect to sspacia.com
+    window.open('https://www.sspacia.com', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="page-transition-enter">
       {/* Banner */}
@@ -261,18 +271,31 @@ export const Businesses: React.FC = () => {
             </div>
           )}
 
-          {/* Division 03: Sspacia Coworking (Interactive hover & link to sspacia.com) */}
+          {/* Division 03: Sspacia Coworking (Entire Section Interactive Link to sspacia.com) */}
           {(activeTab === 'all' || activeTab === 'sspacia') && (
-            <div id="sspacia" className="tab-pane-transition" style={{ 
-              marginBottom: '4rem', 
-              background: '#FFFFFF', 
-              border: '1px solid var(--border-light)', 
-              borderRadius: 'var(--radius-sm)', 
-              boxShadow: 'var(--shadow-subtle)',
-              borderLeft: '5px solid #7E22CE',
-              padding: '3rem 2.5rem',
-              position: 'relative'
-            }}>
+            <div 
+              id="sspacia" 
+              onClick={handleSspaciaSectionClick}
+              className="tab-pane-transition sspacia-full-portal-section" 
+              style={{ 
+                marginBottom: '4rem', 
+                background: '#FFFFFF', 
+                border: '1px solid var(--border-light)', 
+                borderRadius: 'var(--radius-sm)', 
+                boxShadow: 'var(--shadow-subtle)',
+                borderLeft: '5px solid #7E22CE',
+                padding: '3rem 2.5rem',
+                position: 'relative',
+                cursor: 'pointer'
+              }}
+              title="Click anywhere to visit sspacia.com"
+            >
+              {/* Floating Top Portal Indicator */}
+              <div className="sspacia-section-portal-pill">
+                <Globe2 size={16} />
+                <span>Visit sspacia.com ↗</span>
+              </div>
+
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center', marginBottom: '2.5rem' }}>
                 <div>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(126, 34, 206, 0.1)', color: '#7E22CE', padding: '0.35rem 0.85rem', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: 'var(--radius-xs)', marginBottom: '1rem' }}>
@@ -301,28 +324,23 @@ export const Businesses: React.FC = () => {
                       <span>Visit Sspacia Platform</span>
                       <ExternalLink size={15} style={{ marginLeft: '4px' }} />
                     </a>
-                    <Link to="/contact?type=sspacia" className="btn-outline-dark">
+                    <Link to="/contact?type=sspacia" className="btn-outline-dark stay-internal-link" title="Book Workspace Tour">
                       <span>Book Workspace Tour</span>
                       <span className="corp-arrow-box">&gt;</span>
                     </Link>
                   </div>
                 </div>
 
-                {/* Clickable Image Showcase that redirects to sspacia.com on hover/click */}
-                <a
-                  href="https://www.sspacia.com"
-                  target="_blank"
-                  rel="noreferrer"
+                {/* Clickable Image Showcase that redirects to sspacia.com */}
+                <div
                   style={{ 
                     position: 'relative', 
                     display: 'block', 
                     borderRadius: 'var(--radius-sm)', 
                     overflow: 'hidden', 
-                    boxShadow: 'var(--shadow-medium)',
-                    cursor: 'pointer'
+                    boxShadow: 'var(--shadow-medium)'
                   }}
                   className="sspacia-interactive-card"
-                  title="Click to visit sspacia.com"
                 >
                   <img 
                     src="/sspacia/sspacia-cabin.jpg" 
@@ -352,10 +370,10 @@ export const Businesses: React.FC = () => {
                       Click to explore flexible workspaces & cabins ↗
                     </span>
                   </div>
-                </a>
+                </div>
               </div>
 
-              {/* Sspacia Features Grid with Real Photos Gallery */}
+              {/* Sspacia Features Grid */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '2rem', marginBottom: '2rem' }}>
                 <div style={{ background: 'var(--bg-platinum)', padding: '1.5rem', borderRadius: 'var(--radius-sm)' }}>
                   <LayoutGrid size={26} color="#7E22CE" style={{ marginBottom: '0.75rem' }} />
@@ -388,31 +406,23 @@ export const Businesses: React.FC = () => {
                 </div>
               </div>
 
-              {/* Sspacia Image Showcase Gallery - Clickable and hover reveals sspacia.com */}
+              {/* Sspacia Image Showcase Gallery */}
               <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '1.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <h4 style={{ fontSize: '0.95rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--corp-slate)', margin: 0 }}>
                     Sspacia Real Space Gallery
                   </h4>
-                  <a 
-                    href="https://www.sspacia.com" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    style={{ fontSize: '0.85rem', color: '#7E22CE', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.35rem' }}
-                  >
+                  <span style={{ fontSize: '0.85rem', color: '#7E22CE', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                     <span>Visit sspacia.com</span>
                     <ExternalLink size={13} />
-                  </a>
+                  </span>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-                  <a 
-                    href="https://www.sspacia.com" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <div 
                     className="sspacia-interactive-card" 
                     style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
-                    title="Reception - Visit sspacia.com"
+                    title="Reception - Click to visit sspacia.com"
                   >
                     <img 
                       src="/sspacia/sspacia-reception.jpg" 
@@ -434,15 +444,12 @@ export const Businesses: React.FC = () => {
                     }}>
                       <span>sspacia.com ↗</span>
                     </div>
-                  </a>
+                  </div>
 
-                  <a 
-                    href="https://www.sspacia.com" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <div 
                     className="sspacia-interactive-card" 
                     style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
-                    title="Executive Cabin - Visit sspacia.com"
+                    title="Executive Cabin - Click to visit sspacia.com"
                   >
                     <img 
                       src="/sspacia/sspacia-executive.jpg" 
@@ -464,15 +471,12 @@ export const Businesses: React.FC = () => {
                     }}>
                       <span>sspacia.com ↗</span>
                     </div>
-                  </a>
+                  </div>
 
-                  <a 
-                    href="https://www.sspacia.com" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <div 
                     className="sspacia-interactive-card" 
                     style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
-                    title="Board Room - Visit sspacia.com"
+                    title="Board Room - Click to visit sspacia.com"
                   >
                     <img 
                       src="/sspacia/sspacia-boardroom.jpg" 
@@ -494,15 +498,12 @@ export const Businesses: React.FC = () => {
                     }}>
                       <span>sspacia.com ↗</span>
                     </div>
-                  </a>
+                  </div>
 
-                  <a 
-                    href="https://www.sspacia.com" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <div 
                     className="sspacia-interactive-card" 
                     style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
-                    title="Cafeteria - Visit sspacia.com"
+                    title="Cafeteria - Click to visit sspacia.com"
                   >
                     <img 
                       src="/sspacia/sspacia-cafeteria.jpg" 
@@ -524,7 +525,7 @@ export const Businesses: React.FC = () => {
                     }}>
                       <span>sspacia.com ↗</span>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>

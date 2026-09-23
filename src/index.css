@@ -1799,6 +1799,47 @@ img {
   animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Sspacia Full Section Interactive Portal */
+.sspacia-full-portal-section {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  cursor: pointer;
+}
+
+.sspacia-full-portal-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(126, 34, 206, 0.16) !important;
+  border-color: rgba(126, 34, 206, 0.4) !important;
+}
+
+.sspacia-section-portal-pill {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(126, 34, 206, 0.08);
+  color: #7E22CE;
+  border: 1px solid rgba(126, 34, 206, 0.25);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+}
+
+.sspacia-full-portal-section:hover .sspacia-section-portal-pill {
+  background: #7E22CE;
+  color: #FFFFFF;
+  border-color: #7E22CE;
+  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.35);
+  transform: scale(1.05);
+}
+
 /* Sspacia Interactive Card Hover */
 .sspacia-interactive-card {
   position: relative;
