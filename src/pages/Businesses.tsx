@@ -15,7 +15,8 @@ import {
   Layers,
   Award,
   Briefcase,
-  Users
+  Users,
+  Globe2
 } from 'lucide-react';
 
 export const Businesses: React.FC = () => {
@@ -87,7 +88,7 @@ export const Businesses: React.FC = () => {
             </button>
           </div>
 
-          {/* Division 01: GeM Portal Supplies (Simple clean photo - no ships) */}
+          {/* Division 01: GeM Portal Supplies with Official GeM Logo Showcase */}
           {(activeTab === 'all' || activeTab === 'gem') && (
             <div id="gem" className="tab-pane-transition" style={{ 
               marginBottom: '4rem', 
@@ -260,7 +261,7 @@ export const Businesses: React.FC = () => {
             </div>
           )}
 
-          {/* Division 03: Sspacia Coworking (Actual Sspacia photo from sspacia-site) */}
+          {/* Division 03: Sspacia Coworking (Interactive hover & link to sspacia.com) */}
           {(activeTab === 'all' || activeTab === 'sspacia') && (
             <div id="sspacia" className="tab-pane-transition" style={{ 
               marginBottom: '4rem', 
@@ -269,7 +270,8 @@ export const Businesses: React.FC = () => {
               borderRadius: 'var(--radius-sm)', 
               boxShadow: 'var(--shadow-subtle)',
               borderLeft: '5px solid #7E22CE',
-              padding: '3rem 2.5rem'
+              padding: '3rem 2.5rem',
+              position: 'relative'
             }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center', marginBottom: '2.5rem' }}>
                 <div>
@@ -293,7 +295,9 @@ export const Businesses: React.FC = () => {
                       rel="noreferrer" 
                       className="btn-primary-corp"
                       style={{ background: '#7E22CE', borderColor: '#7E22CE' }}
+                      title="Visit official sspacia.com portal"
                     >
+                      <Globe2 size={16} />
                       <span>Visit Sspacia Platform</span>
                       <ExternalLink size={15} style={{ marginLeft: '4px' }} />
                     </a>
@@ -304,13 +308,51 @@ export const Businesses: React.FC = () => {
                   </div>
                 </div>
 
-                <div>
+                {/* Clickable Image Showcase that redirects to sspacia.com on hover/click */}
+                <a
+                  href="https://www.sspacia.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ 
+                    position: 'relative', 
+                    display: 'block', 
+                    borderRadius: 'var(--radius-sm)', 
+                    overflow: 'hidden', 
+                    boxShadow: 'var(--shadow-medium)',
+                    cursor: 'pointer'
+                  }}
+                  className="sspacia-interactive-card"
+                  title="Click to visit sspacia.com"
+                >
                   <img 
-                    src="/sspacia/MERCADO 4-SEATER CABIN.jpg" 
+                    src="/sspacia/sspacia-cabin.jpg" 
                     alt="Sspacia Coworking Interior" 
-                    style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-medium)' }}
+                    style={{ width: '100%', height: '340px', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }}
                   />
-                </div>
+                  {/* Floating sspacia.com hover overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(126, 34, 206, 0.85) 0%, rgba(15, 23, 42, 0.3) 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    padding: '1.5rem'
+                  }} className="sspacia-hover-overlay">
+                    <Globe2 size={36} color="#FFFFFF" style={{ marginBottom: '0.75rem' }} />
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>
+                      sspacia.com
+                    </span>
+                    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.9)', marginTop: '0.25rem' }}>
+                      Click to explore flexible workspaces & cabins ↗
+                    </span>
+                  </div>
+                </a>
               </div>
 
               {/* Sspacia Features Grid with Real Photos Gallery */}
@@ -346,32 +388,143 @@ export const Businesses: React.FC = () => {
                 </div>
               </div>
 
-              {/* Sspacia Image Showcase Gallery */}
+              {/* Sspacia Image Showcase Gallery - Clickable and hover reveals sspacia.com */}
               <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '1.75rem' }}>
-                <h4 style={{ fontSize: '0.95rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--corp-slate)', marginBottom: '1rem' }}>
-                  Sspacia Real Space Gallery
-                </h4>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <h4 style={{ fontSize: '0.95rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--corp-slate)', margin: 0 }}>
+                    Sspacia Real Space Gallery
+                  </h4>
+                  <a 
+                    href="https://www.sspacia.com" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    style={{ fontSize: '0.85rem', color: '#7E22CE', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.35rem' }}
+                  >
+                    <span>Visit sspacia.com</span>
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-                  <img 
-                    src="/sspacia/Mercado reception.jpg" 
-                    alt="Sspacia Reception" 
-                    style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px' }}
-                  />
-                  <img 
-                    src="/sspacia/Executive Cabin.jpeg" 
-                    alt="Sspacia Executive Cabin" 
-                    style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px' }}
-                  />
-                  <img 
-                    src="/sspacia/Board room 1.jpeg" 
-                    alt="Sspacia Board Room" 
-                    style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px' }}
-                  />
-                  <img 
-                    src="/sspacia/Cafeteria.jpeg" 
-                    alt="Sspacia Cafeteria" 
-                    style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px' }}
-                  />
+                  <a 
+                    href="https://www.sspacia.com" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="sspacia-interactive-card" 
+                    style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
+                    title="Reception - Visit sspacia.com"
+                  >
+                    <img 
+                      src="/sspacia/sspacia-reception.jpg" 
+                      alt="Sspacia Reception" 
+                      style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                    />
+                    <div className="sspacia-hover-overlay" style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'rgba(126, 34, 206, 0.8)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: 0,
+                      transition: 'opacity 0.25s ease',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      fontWeight: 700
+                    }}>
+                      <span>sspacia.com ↗</span>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://www.sspacia.com" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="sspacia-interactive-card" 
+                    style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
+                    title="Executive Cabin - Visit sspacia.com"
+                  >
+                    <img 
+                      src="/sspacia/sspacia-executive.jpg" 
+                      alt="Sspacia Executive Cabin" 
+                      style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                    />
+                    <div className="sspacia-hover-overlay" style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'rgba(126, 34, 206, 0.8)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: 0,
+                      transition: 'opacity 0.25s ease',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      fontWeight: 700
+                    }}>
+                      <span>sspacia.com ↗</span>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://www.sspacia.com" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="sspacia-interactive-card" 
+                    style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
+                    title="Board Room - Visit sspacia.com"
+                  >
+                    <img 
+                      src="/sspacia/sspacia-boardroom.jpg" 
+                      alt="Sspacia Board Room" 
+                      style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                    />
+                    <div className="sspacia-hover-overlay" style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'rgba(126, 34, 206, 0.8)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: 0,
+                      transition: 'opacity 0.25s ease',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      fontWeight: 700
+                    }}>
+                      <span>sspacia.com ↗</span>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://www.sspacia.com" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="sspacia-interactive-card" 
+                    style={{ position: 'relative', display: 'block', borderRadius: '4px', overflow: 'hidden' }}
+                    title="Cafeteria - Visit sspacia.com"
+                  >
+                    <img 
+                      src="/sspacia/sspacia-cafeteria.jpg" 
+                      alt="Sspacia Cafeteria" 
+                      style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                    />
+                    <div className="sspacia-hover-overlay" style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'rgba(126, 34, 206, 0.8)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: 0,
+                      transition: 'opacity 0.25s ease',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      fontWeight: 700
+                    }}>
+                      <span>sspacia.com ↗</span>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -63,7 +63,7 @@ const slides: SlideData[] = [
     titleHighlight: 'Visionary Teams.',
     titlePart2: '',
     description: 'Founded by Praveen Agarwal, Sspacia Coworking provides enterprise-grade office suites, dedicated desks, and dynamic community ecosystems tailored for modern businesses.',
-    image: '/sspacia/MERCADO 4-SEATER CABIN.jpg',
+    image: '/sspacia/hero-bg-reception.jpg',
     primaryCtaText: 'Discover Sspacia',
     primaryCtaLink: '/businesses#sspacia',
     secondaryCtaText: 'Visit Sspacia Platform',
@@ -73,30 +73,27 @@ const slides: SlideData[] = [
 
 export const HeroSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+  }, []);
 
+  // Continuous auto-advance every 4 seconds
   useEffect(() => {
-    if (isPaused) return;
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [nextSlide, isPaused]);
+  }, [currentSlide]);
 
   return (
     <section
       className="hero-slider-container"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       aria-label="Corporate Carousel"
     >
       {slides.map((slide, index) => {
@@ -110,7 +107,7 @@ export const HeroSlider: React.FC = () => {
             {/* Background Image with Ken Burns effect */}
             <div
               className="hero-slide-bg"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              style={{ backgroundImage: `url("${slide.image}")` }}
             />
 
             {/* Dark Linear Gradient Overlay */}
@@ -180,18 +177,15 @@ export const HeroSlider: React.FC = () => {
                   </div>
                   <div className="hero-progress-bar-bg">
                     <div
+                      key={`progress-${idx}-${idx === currentSlide}`}
                       className="hero-progress-bar-fill"
-                      style={{
-                        width: idx === currentSlide ? '100%' : idx < currentSlide ? '100%' : '0%',
-                        transition: idx === currentSlide ? 'width 4s linear' : 'none'
-                      }}
                     />
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Next / Previous Arrow Buttons */}
+            {/* Next / Previous Arrow Controls */}
             <div className="hero-arrow-controls">
               <button
                 onClick={prevSlide}

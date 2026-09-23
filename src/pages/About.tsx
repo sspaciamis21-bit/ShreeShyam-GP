@@ -5,22 +5,13 @@ import {
   ShieldCheck, 
   Building2, 
   LayoutGrid, 
-  Award, 
-  CheckCircle2, 
-  Target, 
-  Compass, 
   Upload,
-  ArrowRight,
-  TrendingUp
+  ArrowRight
 } from 'lucide-react';
 
 interface LeaderMember {
   id: string;
   name: string;
-  role: string;
-  divisionTag: string;
-  tagline: string;
-  bio: string;
   imageSrc: string;
   icon: React.ReactNode;
 }
@@ -30,40 +21,24 @@ export const About: React.FC = () => {
     {
       id: 'dilip-agarwal',
       name: 'Dilip Agarwal',
-      role: 'Founder & Visionary',
-      divisionTag: 'Group Leadership',
-      tagline: 'Founding Pillar & Group Visionary',
-      bio: 'Dilip Agarwal established Shree Shyam Group with a deep commitment to commercial integrity, transparent contracting, and long-term nation-building value. Under his foundational guidance, the group systematically diversified from civil contracting into large-scale government procurement and contemporary managed office spaces.',
       imageSrc: '/images/dilip-agarwal.jpg',
       icon: <Users size={48} color="var(--corp-gold-light)" />
     },
     {
-      id: 'praveen-agarwal',
-      name: 'Praveen Agarwal',
-      role: 'Director & Founder of Sspacia Coworking',
-      divisionTag: 'Workspaces Division',
-      tagline: 'Pioneering Modern Collaborative Workspaces',
-      bio: 'Praveen Agarwal is a Director of Shree Shyam Group and the visionary Founder of Sspacia Coworking Spaces. Anticipating the future of modern work, he pioneered luxury managed office suites, soundproof cabins, and vibrant enterprise community hubs catering to startups, corporate branches, and growing enterprises.',
-      imageSrc: '/images/praveen-agarwal.jpg',
-      icon: <LayoutGrid size={48} color="var(--corp-gold-light)" />
-    },
-    {
       id: 'abhishekh-agarwal',
       name: 'Abhishekh Agarwal',
-      role: 'Director (GeM Portal & Public Supplies)',
-      divisionTag: 'Public Procurement Division',
-      tagline: 'Driving Public Sector Procurement Excellence',
-      bio: 'Abhishekh Agarwal spearheads the group’s official Government e-Marketplace (GeM) portal operations, tender strategies, and vendor compliance. Under his leadership, Shree Shyam Group participates actively in competitive government bids, fulfilling critical supply requirements across state and central departments.',
       imageSrc: '/images/abhishekh-agarwal.jpg',
       icon: <ShieldCheck size={48} color="var(--corp-gold-light)" />
     },
     {
+      id: 'praveen-agarwal',
+      name: 'Praveen Agarwal',
+      imageSrc: '/images/praveen-agarwal.jpg',
+      icon: <LayoutGrid size={48} color="var(--corp-gold-light)" />
+    },
+    {
       id: 'komal-agarwal',
       name: 'Komal Agarwal',
-      role: 'Director (Construction & Infrastructure)',
-      divisionTag: 'Real Estate Division',
-      tagline: 'Engineering Quality & Architectural Precision',
-      bio: 'Komal Agarwal oversees project execution standards, commercial real estate growth, and civil engineering infrastructure projects. He guarantees structural durability, modern aesthetics, safety certifications, and timely milestone deliveries across all turnkey developments.',
       imageSrc: '/images/komal-agarwal.jpg',
       icon: <Building2 size={48} color="var(--corp-gold-light)" />
     }
@@ -138,69 +113,14 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Corporate Purpose & Values */}
-      <section id="values" className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3.5rem' }}>
-            <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Purpose & Commitments</span>
-            <h2 className="section-heading-lg">Guided by Enduring Principles</h2>
-            <p className="section-desc-lg" style={{ margin: '0 auto' }}>
-              Our core values guide every interaction with government procurement officials, corporate tenants, and construction partners.
-            </p>
-          </div>
-
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon-box">
-                <Target size={28} />
-              </div>
-              <h4 className="value-card-title">Visionary Focus</h4>
-              <p className="value-card-desc">
-                Building durable infrastructure and long-standing commercial solutions that stand the test of time and market changes.
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon-box">
-                <ShieldCheck size={28} />
-              </div>
-              <h4 className="value-card-title">Govt Compliance</h4>
-              <p className="value-card-desc">
-                Rigorous adherence to GeM portal bidding protocols, financial audits, and certified industrial standards.
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon-box">
-                <Compass size={28} />
-              </div>
-              <h4 className="value-card-title">Client Centricity</h4>
-              <p className="value-card-desc">
-                Prioritizing our clients’ custom requirements in corporate office spaces, construction blueprints, and supply schedules.
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon-box">
-                <TrendingUp size={28} />
-              </div>
-              <h4 className="value-card-title">Sustainable Growth</h4>
-              <p className="value-card-desc">
-                Balancing rapid commercial expansion with environmental responsibility, energy-efficient spaces, and community growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Board of Directors Section */}
-      <section id="leadership" className="section-padding" style={{ background: '#FFFFFF' }}>
+      {/* Board of Directors Section (Names only, exact sequence) */}
+      <section id="leadership" className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 3.5rem' }}>
             <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Executive Leadership</span>
             <h2 className="section-heading-lg">Board of Directors</h2>
             <p className="section-desc-lg" style={{ margin: '0 auto' }}>
-              The visionary directors steering Shree Shyam Group’s strategic expansion, public partnerships, and operational performance.
+              The leadership guiding Shree Shyam Group of Companies.
             </p>
           </div>
 
@@ -227,18 +147,8 @@ export const About: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="leader-details-body">
-                  <span className="leader-badge-tag">{leader.divisionTag}</span>
-                  <h3 className="leader-full-name">{leader.name}</h3>
-                  <div className="leader-corporate-role">{leader.role}</div>
-
-                  <p style={{ fontSize: '0.82rem', color: 'var(--corp-maroon)', fontWeight: 700, marginBottom: '0.75rem', fontStyle: 'italic' }}>
-                    "{leader.tagline}"
-                  </p>
-
-                  <p className="leader-bio-summary">
-                    {leader.bio}
-                  </p>
+                <div className="leader-details-body" style={{ textAlign: 'center', padding: '1.5rem 1rem' }}>
+                  <h3 className="leader-full-name" style={{ margin: 0, fontSize: '1.25rem', color: 'var(--corp-slate)' }}>{leader.name}</h3>
                 </div>
               </div>
             ))}
@@ -248,7 +158,7 @@ export const About: React.FC = () => {
           <div style={{ 
             marginTop: '3.5rem', 
             padding: '1.5rem 2rem', 
-            background: 'var(--bg-platinum)', 
+            background: '#FFFFFF', 
             borderRadius: 'var(--radius-sm)', 
             border: '1px dashed var(--border-medium)', 
             display: 'flex', 
@@ -262,7 +172,7 @@ export const About: React.FC = () => {
                 Photo Upload Note:
               </div>
               <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-muted)' }}>
-                To customize the directors' portraits, save photos named <code>dilip-agarwal.jpg</code>, <code>praveen-agarwal.jpg</code>, <code>abhishekh-agarwal.jpg</code>, and <code>komal-agarwal.jpg</code> in the <code>public/images/</code> folder.
+                To customize the directors' portraits, save photos named <code>dilip-agarwal.jpg</code>, <code>abhishekh-agarwal.jpg</code>, <code>praveen-agarwal.jpg</code>, and <code>komal-agarwal.jpg</code> in the <code>public/images/</code> folder.
               </div>
             </div>
           </div>
@@ -270,7 +180,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Group Milestones & Journey */}
-      <section id="milestones" className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
+      <section id="milestones" className="section-padding" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3.5rem' }}>
             <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Growth Trajectory</span>
@@ -282,7 +192,7 @@ export const About: React.FC = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
             {/* Era 1 */}
-            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--border-light)', borderTopWidth: '3px' }}>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
                 Phase 01
               </div>
@@ -295,7 +205,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Era 2 */}
-            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--border-light)', borderTopWidth: '3px' }}>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
                 Phase 02
               </div>
@@ -308,7 +218,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Era 3 */}
-            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--border-light)', borderTopWidth: '3px' }}>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
                 Phase 03
               </div>
@@ -321,7 +231,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Era 4 */}
-            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)' }}>
+            <div style={{ background: '#FFFFFF', padding: '2rem', borderTop: '3px solid var(--corp-maroon)', borderRadius: 'var(--radius-sm)', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--border-light)', borderTopWidth: '3px' }}>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--corp-maroon)', fontFamily: 'var(--font-heading)', marginBottom: '0.25rem' }}>
                 Phase 04
               </div>

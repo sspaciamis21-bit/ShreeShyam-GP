@@ -202,7 +202,7 @@ export const Home: React.FC = () => {
             <div className="sector-corp-card">
               <div className="sector-img-container">
                 <img 
-                  src="/sspacia/MERCADO 4-SEATER CABIN.jpg" 
+                  src="/sspacia/sspacia-cabin.jpg" 
                   alt="Sspacia Coworking Spaces" 
                   className="sector-main-img"
                 />
@@ -245,74 +245,15 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 05: Values & Purpose ("A Force for Good" Aditya Birla Style) */}
+      {/* 05: Executive Leadership Spotlight (Names only, in required sequence) */}
       <section className="section-padding" style={{ background: 'var(--bg-platinum)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 3.5rem' }}>
-            <span className="section-eyebrow" style={{ justifyContent: 'center' }}>Group Values</span>
-            <h2 className="section-heading-lg">Principles That Drive Our Growth</h2>
-            <p className="section-desc-lg" style={{ margin: '0 auto' }}>
-              At Shree Shyam Group, corporate integrity, operational speed, and social responsibility define every project and government partnership.
-            </p>
-          </div>
-
-          <div className="values-grid">
-            {/* Value 1 */}
-            <div className="value-card">
-              <div className="value-icon-box">
-                <ShieldCheck size={28} />
-              </div>
-              <h4 className="value-card-title">Uncompromising Integrity</h4>
-              <p className="value-card-desc">
-                Adhering to the highest standards of transparency, statutory compliance, and ethical contracting across all operations.
-              </p>
-            </div>
-
-            {/* Value 2 */}
-            <div className="value-card">
-              <div className="value-icon-box">
-                <Award size={28} />
-              </div>
-              <h4 className="value-card-title">Execution Excellence</h4>
-              <p className="value-card-desc">
-                Delivering verified quality materials in public procurement and unmatched durability in structural engineering.
-              </p>
-            </div>
-
-            {/* Value 3 */}
-            <div className="value-card">
-              <div className="value-icon-box">
-                <TrendingUp size={28} />
-              </div>
-              <h4 className="value-card-title">Agility & Innovation</h4>
-              <p className="value-card-desc">
-                Rapidly adapting to modern industry demands, digital GeM bidding mechanisms, and flexible workspace evolution.
-              </p>
-            </div>
-
-            {/* Value 4 */}
-            <div className="value-card">
-              <div className="value-icon-box">
-                <HeartHandshake size={28} />
-              </div>
-              <h4 className="value-card-title">Nation Building</h4>
-              <p className="value-card-desc">
-                Supporting governmental departments, public sector infrastructure, and empowering emerging businesses with workspace hubs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 06: Executive Leadership Spotlight */}
-      <section className="section-padding" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
               <span className="section-eyebrow">Governance & Leadership</span>
               <h2 className="section-heading-lg">Meet Our Executive Board</h2>
               <p className="section-desc-lg">
-                The visionary leadership guiding Shree Shyam Group across commerce, procurement, and workspace innovation.
+                The leadership guiding Shree Shyam Group of Companies.
               </p>
             </div>
 
@@ -344,48 +285,12 @@ export const Home: React.FC = () => {
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
                 </div>
               </div>
-              <div className="leader-details-body">
-                <span className="leader-badge-tag">Group Founder</span>
-                <h3 className="leader-full-name">Dilip Agarwal</h3>
-                <div className="leader-corporate-role">Founder & Visionary</div>
-                <p className="leader-bio-summary">
-                  Founding pillar who established the core values, commercial ethics, and strategic foundations of Shree Shyam Group.
-                </p>
+              <div className="leader-details-body" style={{ textAlign: 'center', padding: '1.5rem 1rem' }}>
+                <h3 className="leader-full-name" style={{ margin: 0, fontSize: '1.25rem', color: 'var(--corp-slate)' }}>Dilip Agarwal</h3>
               </div>
             </div>
 
-            {/* Leader 2: Praveen Agarwal */}
-            <div className="leader-corp-card">
-              <div className="leader-photo-box">
-                <img 
-                  src="/images/praveen-agarwal.jpg" 
-                  alt="Praveen Agarwal"
-                  className="leader-photo-img"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                    const parent = (e.target as HTMLElement).parentElement;
-                    if (parent) {
-                      const placeholder = parent.querySelector('.leader-photo-placeholder') as HTMLElement;
-                      if (placeholder) placeholder.style.display = 'flex';
-                    }
-                  }}
-                />
-                <div className="leader-photo-placeholder" style={{ display: 'none' }}>
-                  <LayoutGrid size={48} color="var(--corp-gold-light)" />
-                  <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
-                </div>
-              </div>
-              <div className="leader-details-body">
-                <span className="leader-badge-tag">Workspaces Lead</span>
-                <h3 className="leader-full-name">Praveen Agarwal</h3>
-                <div className="leader-corporate-role">Director & Founder of Sspacia</div>
-                <p className="leader-bio-summary">
-                  Director of Shree Shyam Group and visionary Founder of Sspacia Coworking Spaces, driving next-generation managed offices.
-                </p>
-              </div>
-            </div>
-
-            {/* Leader 3: Abhishekh Agarwal */}
+            {/* Leader 2: Abhishekh Agarwal */}
             <div className="leader-corp-card">
               <div className="leader-photo-box">
                 <img 
@@ -406,13 +311,34 @@ export const Home: React.FC = () => {
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
                 </div>
               </div>
-              <div className="leader-details-body">
-                <span className="leader-badge-tag">GeM Operations Lead</span>
-                <h3 className="leader-full-name">Abhishekh Agarwal</h3>
-                <div className="leader-corporate-role">Director (GeM & Govt Supplies)</div>
-                <p className="leader-bio-summary">
-                  Executive director spearheading GeM portal procurement, national tender participation, and public sector partnerships.
-                </p>
+              <div className="leader-details-body" style={{ textAlign: 'center', padding: '1.5rem 1rem' }}>
+                <h3 className="leader-full-name" style={{ margin: 0, fontSize: '1.25rem', color: 'var(--corp-slate)' }}>Abhishekh Agarwal</h3>
+              </div>
+            </div>
+
+            {/* Leader 3: Praveen Agarwal */}
+            <div className="leader-corp-card">
+              <div className="leader-photo-box">
+                <img 
+                  src="/images/praveen-agarwal.jpg" 
+                  alt="Praveen Agarwal"
+                  className="leader-photo-img"
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                    const parent = (e.target as HTMLElement).parentElement;
+                    if (parent) {
+                      const placeholder = parent.querySelector('.leader-photo-placeholder') as HTMLElement;
+                      if (placeholder) placeholder.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div className="leader-photo-placeholder" style={{ display: 'none' }}>
+                  <LayoutGrid size={48} color="var(--corp-gold-light)" />
+                  <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
+                </div>
+              </div>
+              <div className="leader-details-body" style={{ textAlign: 'center', padding: '1.5rem 1rem' }}>
+                <h3 className="leader-full-name" style={{ margin: 0, fontSize: '1.25rem', color: 'var(--corp-slate)' }}>Praveen Agarwal</h3>
               </div>
             </div>
 
@@ -437,13 +363,8 @@ export const Home: React.FC = () => {
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Executive Portrait</span>
                 </div>
               </div>
-              <div className="leader-details-body">
-                <span className="leader-badge-tag">Construction Lead</span>
-                <h3 className="leader-full-name">Komal Agarwal</h3>
-                <div className="leader-corporate-role">Director (Construction & Infra)</div>
-                <p className="leader-bio-summary">
-                  Executive director overseeing turnkey project execution, real estate development, and structural engineering standards.
-                </p>
+              <div className="leader-details-body" style={{ textAlign: 'center', padding: '1.5rem 1rem' }}>
+                <h3 className="leader-full-name" style={{ margin: 0, fontSize: '1.25rem', color: 'var(--corp-slate)' }}>Komal Agarwal</h3>
               </div>
             </div>
           </div>

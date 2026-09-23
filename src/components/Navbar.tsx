@@ -121,7 +121,7 @@ export const Navbar: React.FC = () => {
                         </div>
                         <div className="mega-card-body">
                           <h4 className="mega-card-title">Board of Directors</h4>
-                          <p className="mega-card-desc">Meet Dilip Agarwal, Praveen Agarwal, Abhishekh Agarwal & Komal Agarwal.</p>
+                          <p className="mega-card-desc">Dilip Agarwal, Abhishekh Agarwal, Praveen Agarwal & Komal Agarwal.</p>
                           <span className="mega-card-arrow">
                             <span>Meet Leaders</span>
                             <span className="mega-arrow-box">&gt;</span>
@@ -129,20 +129,20 @@ export const Navbar: React.FC = () => {
                         </div>
                       </Link>
 
-                      {/* Card 3: Values */}
-                      <Link to="/about#values" className="mega-card">
+                      {/* Card 3: Milestones */}
+                      <Link to="/about#milestones" className="mega-card">
                         <div className="mega-card-img-wrap">
                           <img 
-                            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=400&q=80" 
-                            alt="Values & Purpose" 
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" 
+                            alt="Group Milestones" 
                             className="mega-card-img"
                           />
                         </div>
                         <div className="mega-card-body">
-                          <h4 className="mega-card-title">Vision & Purpose</h4>
-                          <p className="mega-card-desc">Delivering excellence, nation building, and customer value across every vertical.</p>
+                          <h4 className="mega-card-title">Group Journey</h4>
+                          <p className="mega-card-desc">Key milestones in the growth and expansion of Shree Shyam Group.</p>
                           <span className="mega-card-arrow">
-                            <span>Our Values</span>
+                            <span>Our Journey</span>
                             <span className="mega-arrow-box">&gt;</span>
                           </span>
                         </div>
